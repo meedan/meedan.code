@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.small-caps {
+	text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+
+/**
+ * Responsive media (images, videos…)
+ *
+ * 1. Give the block an initial ratio of 5/3 to avoid FOUC
+ * 2. Stretch the contained media to the dimensions of its container
+ */
+
+.u-responsive-ratio {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    iframe,
+    embed,
+    object,
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+    // Modifier class for 16:9 aspect ratio
+    &.media-16by9 {
+        padding-bottom: 56.25%;
+    }
+
+    // Modifier class for 4:3 aspect ratio
+    &.media-4by3 {
+        padding-bottom: 75%;
+    }
+
+    // Modifier class for 1:1 aspect ratio
+    &.media-1by1 {
+        padding-bottom: 100%;
+    }
+}
+
+.avatar {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: $neutral-light;
+}
+
+.thumb-2 {
+	width: 2em;
+	height: 2em;
+}
+
+.thumb-5 {
+	width: 5em;
+	height: 5em;
+}
+
+.thumb-10 {
+	width: 10em;
+	height: 10em;
+}

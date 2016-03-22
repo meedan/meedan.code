@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="750px" height="718px" viewBox="0 0 750 718" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-lovestream</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="34.195496%" x2="100%" y2="65.804504%" id="linearGradient-1">
+            <stop stop-color="#8D00FF" offset="0%"></stop>
+            <stop stop-color="#00FF06" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0.835552423%" y1="41.568043%" x2="95.4936223%" y2="81.0325978%" id="linearGradient-2">
+            <stop stop-color="#FF8282" offset="0%"></stop>
+            <stop stop-color="#3065B5" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="0%" cy="0%" fx="0%" fy="0%" r="57.43%" id="radialGradient-3">
+            <stop stop-color="#00FFFF" offset="0%"></stop>
+            <stop stop-color="#00FFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="0%" cy="0%" fx="0%" fy="0%" r="97.9908069%" id="radialGradient-4">
+            <stop stop-color="#83D0FF" stop-opacity="0.989356884" offset="0%"></stop>
+            <stop stop-color="#00FFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="61.3931176%" cy="36.0620506%" fx="61.3931176%" fy="36.0620506%" r="104.755323%" id="radialGradient-5">
+            <stop stop-color="#2F5586" offset="0%"></stop>
+            <stop stop-color="#2F5686" stop-opacity="0.72134088" offset="29.7500719%"></stop>
+            <stop stop-color="#2F5686" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="0%" cy="85.0977421%" fx="0%" fy="85.0977421%" r="97.0405785%" id="radialGradient-6">
+            <stop stop-color="#FF7800" offset="0%"></stop>
+            <stop stop-color="#FF7800" stop-opacity="0.72134088" offset="37.566392%"></stop>
+            <stop stop-color="#FF7800" stop-opacity="0.139404297" offset="79.9141119%"></stop>
+            <stop stop-color="#FF7800" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg-lovestream">
+            <g id="Group">
+                <g id="gradient" fill="url(#linearGradient-2)">
+                    <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b"></path>
+                </g>
+                <g id="gradient" fill="url(#radialGradient-4)">
+                    <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b"></path>
+                </g>
+                <g id="gradient" fill="url(#radialGradient-5)">
+                    <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b" style="mix-blend-mode: overlay;"></path>
+                </g>
+                <g id="gradient" fill="url(#radialGradient-6)">
+                    <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b"></path>
+                </g>
+                <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b"></path>
+            </g>
+        </g>
+    </g>
+</svg>

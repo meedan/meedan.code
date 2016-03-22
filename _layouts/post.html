@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="content-body" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time></div>
+  </header>
+
+  {{ content }}
+
+  <hr/>
+
+  <div class="bio">
+    <div class="avatar thumb-5" style="background-image:url('https://meedan.com/images/team/caio@1x.jpg');"></div>
+    <p>Marc is a software and hardware engineer building better data tools. Follow <a href="#">@kamicut</a> on Twitter.</p>
+  </div>
+
+</article>

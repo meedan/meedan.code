@@ -1,0 +1,15 @@
+---
+layout: default
+title: Meedan Code
+class: front
+---
+<section class="log">
+  <ul class="headline-list u-unstyled">
+    {% for post in site.posts %}
+    <li class="headline-list-item">
+      <time class="datetime" datetime="{{ post.date | date_to_xmlschema }}"><span class="datetime-month">{{ post.date | date: "%b" }}</span><span class="datetime-day">{{ post.date | date: "%d" }}</span></time>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

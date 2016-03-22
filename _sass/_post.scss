@@ -1,0 +1,65 @@
+.content-body {
+	max-width: 40rem;
+	font-size: 1.0625rem;
+	font-size: 1.125rem;
+	line-height: 1.8167;
+}
+
+
+header {
+	margin-bottom: 1.7em;
+	font-size: inherit;
+}
+
+h1, 
+h2 {
+	font-size: inherit;
+	margin-bottom: 1.7em;
+}
+
+.meta {
+	margin-top: -1.7em;
+}
+
+img {
+	display: block;
+	margin: 1.7em auto;
+}
+
+hr,
+figure,
+p {
+	margin: 0 auto 1.7em;
+}
+
+blockquote {
+	margin: 1.7em 0 1.7em 1.7em;
+	font-size: 0.8824em;
+	line-height: 1.98799;
+}
+
+hr {
+	position: relative;
+	width: 100%;
+	border: none;
+	color: inherit;
+	&:after {
+		position: absolute;
+		content: '';
+		border-top: 1px solid rgba($neutral-light, 0.8);
+		width: 1.65em;
+		top: 0;
+		letter-spacing: 0.25rem;
+		text-align: center;
+	}
+}
+
+.bio {
+	
+}
+
+.avatar {
+	display: block;
+	text-align: center;
+	margin: 3em auto 0.7em auto;
+}

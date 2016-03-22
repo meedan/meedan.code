@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="718px" height="718px" viewBox="0 0 718 718" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-lovestream-overlay</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="0%" cy="0%" fx="0%" fy="0%" r="57.43%" id="radialGradient-1">
+            <stop stop-color="#00FFFF" offset="0%"></stop>
+            <stop stop-color="#00FFFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="48.8319933%" cy="50%" fx="48.8319933%" fy="50%" r="50.0136405%" id="radialGradient-2">
+            <stop stop-color="#FFA99B" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFA99B" stop-opacity="0.731119792" offset="34.2673788%"></stop>
+            <stop stop-color="#FF9231" stop-opacity="0.807631341" offset="58.1373565%"></stop>
+            <stop stop-color="#FF9231" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg-lovestream-overlay" transform="translate(-7.000000, 0.000000)">
+            <g id="Group">
+                <g id="gradient" fill="url(#radialGradient-2)">
+                    <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b" style="mix-blend-mode: hard-light;"></path>
+                </g>
+                <path d="M0,0 L750,0 L750,718 L0,718 L0,0 Z" id="b"></path>
+            </g>
+        </g>
+    </g>
+</svg>
