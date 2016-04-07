@@ -21,9 +21,9 @@ As a CMS, Drupal was among the most successful. It quickly attracted a strong us
 
 The transition succeeded, and within a few years our growing dev team had built 4 moderately complex applications using Drupal, enjoying daily usage and renewed funding. Along the way, we stretched what Drupal could do, made [numerous contributions to its community](https://www.drupal.org/node/2343639), and traveled to many exciting places worldwide. These were the simpler times.
 
-![image alt text](/images/evolution-image_1.png)
+{% include image.html url="/images/evolution-image_1.png" description="" %}
 
-![image alt text](/images/evolution-image_2.png)
+{% include image.html url="/images/evolution-image_2.png" description="" %}
 
 ## Complexity rears its ugly head; the new architecture
 
@@ -33,7 +33,8 @@ It was around that time that Meedan was given the opportunity to work on an ambi
 
 Fortunately, the Web was abuzz with API services and early stream processing systems, so we designed a simple architecture that would break the CMS into 2 main parts: an API to communicate with the mobile frontend, and a collection of background processes to populate and process the data model. We implemented the API using Ruby on Rails, trying to adhere to good REST design practices. As a background processing engine, we selected Apache Storm, for its ability to process streaming input, its neat abstraction of pipelines of computation steps, its clusterabilty, and many other attractive features.
 
-![image alt text](/images/evolution-image_3.png)
+{% include image.html url="/images/evolution-image_3.png" description="" %}
+
 
 ## Explosion of the monolith
 
@@ -53,7 +54,7 @@ Since then, we’ve redesigned our apps’ architectures in terms of reusable, s
 
 * A Hubot that interfaces between various discussion systems (Slack, Twitter, etc.) and our core APIs
 
-![image alt text](/images/evolution-image_4.png)
+{% include image.html url="/images/evolution-image_4.png" description="" %}
 
 We’re enthusiastic about this approach for many reasons. As a very small dev team, we want to minimize dependencies, and allow each member to take charge of complete functionalities. By having the team negotiate API endpoints rather than struggle to untangle large codebases, we are able to move faster and delay the advent of complexity. Also, microservices allow team members to implement their functionalities in their language of choice, so long as they produce an API that complies with our standards. Finally, each service can be independently unit-tested and continuously-deployed with minimal down time.
 
