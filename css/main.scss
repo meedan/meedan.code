@@ -70,6 +70,8 @@ body {
 .content,
 .footer {
   width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
   flex: 1 auto;
   box-sizing: border-box;
 }
@@ -80,7 +82,7 @@ body {
 
 .logo {
   .front & { color: rgba(255,255,255,0.8); }
-  padding: 2rem 5% 0 5%;
+  padding: 2rem 3rem 0 3rem;
   font-size: 1.625rem;
   line-height: 1;
   height: 1.625rem;
@@ -115,7 +117,7 @@ body {
     margin-bottom: 5rem;
   }
 
-  padding: 0 5%;
+  padding: 0 3rem;
 
   a {
     color: $black;
@@ -146,12 +148,12 @@ body {
     display: flex;
     flex-flow: row nowrap;
     .nav {
-      margin-right: 10%;
-      flex: 1 0 24%;
+      margin-right: 2rem;
+      flex: 1 0 28%;
     }
     .content-body {
-      flex: 4 1 75%;
-      padding-right: 10%;
+      flex: 4 1 68%;
+      padding-right: 2rem;
       h1 { margin-top: 0; }
     }
   }
@@ -167,10 +169,6 @@ body {
 
 // ======================================================================
 // Log
-
-.headline-list {
-
-}
 
 .headline-list li {
   list-style: none;
@@ -206,7 +204,7 @@ body {
 
 @include responsive('min-width: #{$width-tablet}') {
   .front .log {
-    flex: 4 1 75%;
+    flex: 4 1 68%;
   }
 }
 
@@ -242,8 +240,8 @@ body {
 
 @include responsive('min-width: #{$width-tablet}') {
   .front .nav {
-    flex: 1 0 24%;
-    margin-right: 10%;
+    flex: 1 0 28%;
+    margin-right: 2rem;
   }
 }
 
@@ -252,9 +250,8 @@ body {
 // footer
 
 .footer {
-  padding: 3em 5%;
   background: #fff;
-
+  padding: 3rem;
   body:not(.front) & {
     border-top: 1px solid rgba($neutral-light, 0.4);
   }
@@ -274,12 +271,12 @@ body {
   }
 
   .colophon {
-    margin-right: 10%;
-    flex: 1 0 24%;
+    margin-right: 2rem;
+    flex: 1 0 28%;
   }
 
   .footer-list {
-    flex: 4 1 75%;
+    flex: 4 1 68%;
   }
 
 }
