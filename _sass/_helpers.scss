@@ -11,6 +11,8 @@
  *
  * 1. Give the block an initial ratio of 5/3 to avoid FOUC
  * 2. Stretch the contained media to the dimensions of its container
+ * To display media in 16:9 ratio use clasess: u-responsive-ratio media-16by9
+ * To display media in 4:3 ratio use clasess: u-responsive-ratio media-4by3
  */
 
 .u-responsive-ratio {
