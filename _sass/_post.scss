@@ -41,6 +41,14 @@ figure a {
 	cursor: zoom-in;
 }
 
+figcaption {
+	font-size: 80%;
+	color: $neutral-dark;
+	padding: 1% 0;
+	// move the caption close to the image
+	margin-top: -1.7em; 
+}
+
 
 blockquote {
 	margin: 1.7em 0 1.7em 1.7em;

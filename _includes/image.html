@@ -1,3 +1,6 @@
 <figure class="{{ include.class }}">
-	<a class="with-caption image-link" href="{{ include.url }}"><img src="{{ include.url }}" alt="{{ include.description }}" /></a>
+	<a class="with-caption image-link" href="{{ include.url }}">
+		<img src="{{ include.url }}" alt="{{ include.description }}" />
+	</a>
+	<figcaption>{{ include.description }}</figcaption>
 </figure>
