@@ -36,6 +36,12 @@ figure img {
 	width: 100%;
 }
 
+figure a {
+	cursor: -webkit-zoom-in;  
+	cursor: zoom-in;
+}
+
+
 blockquote {
 	margin: 1.7em 0 1.7em 1.7em;
 	font-size: 0.8824em;
