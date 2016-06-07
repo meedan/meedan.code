@@ -1,7 +1,7 @@
 (function() {
   $(document).ready(function() {
 
-		$('a').magnificPopup({
+		$('a.image-link').magnificPopup({
 			type:'image',
 			closeOnContentClick: true,
 			image: {

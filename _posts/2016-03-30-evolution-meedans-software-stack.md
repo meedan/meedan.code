@@ -11,7 +11,7 @@ It was a natural genesis. In the beginning, Meedan’s only software consisted o
 
 {% include image.html url="/images/evolution-image_0.jpg" description="Meedan's news app" %}
 
-Today, 6 years later, we are running a clusterable, containerized, code-generated, continuously-integrated deployment of 2 separate user-facing products, each with a backend made of multiple microservices, and supporting multiple front-end platforms. Whoa buzzword overdose! Beyond the hype, though, we gradually evolved to such an architecture out of necessity, with many stops and trials along the way from monolithic to distributed.
+{% include blockquote.html quote="Today, 6 years later, we are running a clusterable, containerized, code-generated, continuously-integrated deployment of 2 separate user-facing products, each with a backend made of multiple microservices, and supporting multiple front-end platforms. Whoa buzzword overdose! Beyond the hype, though, we gradually evolved to such an architecture out of necessity, with many stops and trials along the way from monolithic to distributed." cite="Zane Bevan, Creative Director, Robinhood" %}
 
 ## The Drupal Way
 

@@ -2,7 +2,7 @@
 # Main SASS file
 ---
 // English fonts
-@import url(//fonts.googleapis.com/css?family=Lato:400,400italic,700);
+@import url(//fonts.googleapis.com/css?family=Lato:400,400italic,700|Roboto+Mono);
 
 // import sass files
 @import "colors.scss";
@@ -29,7 +29,6 @@ a {
 }
 
 body {
-  
   font: 16px/26px -apple-system, 'Lato', Helvetica, Helvetica Neue, Arial;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -82,12 +81,50 @@ body {
 // Logo
 
 .logo {
-  .front & { color: rgba(255,255,255,0.8); }
   padding: 2rem 3rem 0 3rem;
-  font-size: 1.625rem;
+  font-family: 'Roboto Mono';
+  font-size: 1.425rem;
+  letter-spacing: 0.02em;
   line-height: 1;
   height: 1.625rem;
   a { display: flex; }
+  
+  .logo-text {
+    position: relative;
+  }
+  
+  .logo-text-original {
+    color: transparent;
+  }
+  
+  .logo-text-styled {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .logo-text-styled .hidden-chars {
+    // display: inline-block;
+  }
+
+  .logo-text-styled .dot:after {
+    opacity: .4;
+    content: ".";
+    left: 50%;
+  }
+
+  .logo-text-styled .return:after {
+    opacity: .4;
+    content: "¬";
+    left: 50%;
+  }
+
+  
+  .front & { color: rgba(255,255,255,0.8); }
+  
   svg {
     display: inline-block;
       // hide SVG icons until JS has loaded
