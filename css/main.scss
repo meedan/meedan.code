@@ -2,7 +2,7 @@
 # Main SASS file
 ---
 // English fonts
-@import url(//fonts.googleapis.com/css?family=Lato:400,400italic,700|Roboto+Mono);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Roboto+Mono);
 
 // import sass files
 @import "colors.scss";
@@ -29,7 +29,8 @@ a {
 }
 
 body {
-  font: 16px/26px -apple-system, 'Lato', Helvetica, Helvetica Neue, Arial;
+  font: 16px/26px -apple-system, 'Open Sans', Helvetica, Helvetica Neue, Arial;
+  letter-spacing: -0.008em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -106,10 +107,6 @@ body {
     pointer-events: none;
   }
 
-  .logo-text-styled .hidden-chars {
-    // display: inline-block;
-  }
-
   .logo-text-styled .dot:after {
     opacity: .4;
     content: ".";
@@ -164,6 +161,10 @@ body {
     background-size: 1px 1px;
     text-decoration: none;
     background-position: 0 99.9%;
+    &:hover {
+      color: $identity;
+      background-image: linear-gradient(to bottom,$identity 75%,$identity 75%);
+    }
     .front & {
       color: #fff;
       background-image: linear-gradient(to bottom,#fff 75%,#fff 75%);
