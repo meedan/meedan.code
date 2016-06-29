@@ -17,3 +17,7 @@ github_username:  meedan
 
 # Build settings
 markdown: kramdown
+
+# Markdown-specific settings
+kramdown:
+  auto_ids: true # Auto-generate ID's for headings
