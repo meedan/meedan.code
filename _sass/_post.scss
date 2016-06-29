@@ -8,17 +8,19 @@
 
 header {
 	margin-bottom: 1.7em;
+	margin-top: -0.2em;
 	font-size: inherit;
+	line-height: 1.275;
+}
+ 
+h1, h2 {
+	font-weight: normal;
+	letter-spacing: -0.008em;
+	margin-bottom: 0.625rem;
 }
 
-h1, 
 h2 {
-	font-size: inherit;
-	margin-bottom: 1.7em;
-}
-
-.meta {
-	margin-top: -1.7em;
+	line-height: 1.35;
 }
 
 img {
@@ -28,14 +30,58 @@ img {
 
 hr,
 figure,
-p {
+p :not(li > p) {
 	margin: 0 auto 1.7em;
 }
 
+li > p {
+	margin: 0 auto 0.7em;
+}
+
+figure img {
+	width: 100%;
+}
+
+figure a {
+	cursor: -webkit-zoom-in;  
+	cursor: zoom-in;
+}
+
+figcaption {
+	font-size: 80%;
+	color: $neutral-dark;
+	padding: 1% 0;
+	// move the caption close to the image
+	margin-top: -1.7em; 
+}
+
+
 blockquote {
+	position: relative;
+	font-family: 'Roboto Mono';
 	margin: 1.7em 0 1.7em 1.7em;
-	font-size: 0.8824em;
+	font-size: 1.125rem;
 	line-height: 1.98799;
+	color: $identity;
+
+	&:before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: -1.7em;
+		height: 100%;
+		width: 3px;
+		background-color: $identity;
+	}
+
+	cite {
+		font-style: normal;
+		margin-top: 1.7em;
+		display: block;
+		font-size: 0.8824em;
+		line-height: 1.98799;
+	}
+
 }
 
 hr {
@@ -52,10 +98,6 @@ hr {
 		letter-spacing: 0.25rem;
 		text-align: center;
 	}
-}
-
-.bio {
-	
 }
 
 .avatar {

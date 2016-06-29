@@ -2,7 +2,7 @@
 # Main SASS file
 ---
 // English fonts
-@import url(//fonts.googleapis.com/css?family=Lato:400,400italic,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Roboto+Mono);
 
 // import sass files
 @import "colors.scss";
@@ -29,7 +29,8 @@ a {
 }
 
 body {
-  font: 16px/26px -apple-system, 'Lato', Helvetica, Helvetica Neue, Arial;
+  font: 16px/26px -apple-system, 'Open Sans', Helvetica, Helvetica Neue, Arial;
+  letter-spacing: -0.008em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -81,12 +82,46 @@ body {
 // Logo
 
 .logo {
-  .front & { color: rgba(255,255,255,0.8); }
   padding: 2rem 3rem 0 3rem;
-  font-size: 1.625rem;
+  font-family: 'Roboto Mono';
+  font-size: 1.425rem;
+  letter-spacing: 0.02em;
   line-height: 1;
   height: 1.625rem;
   a { display: flex; }
+  
+  .logo-text {
+    position: relative;
+  }
+  
+  .logo-text-original {
+    color: transparent;
+  }
+  
+  .logo-text-styled {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .logo-text-styled .dot:after {
+    opacity: .4;
+    content: ".";
+    left: 50%;
+  }
+
+  .logo-text-styled .return:after {
+    opacity: .4;
+    content: "¬";
+    left: 50%;
+  }
+
+  
+  .front & { color: rgba(255,255,255,0.8); }
+  
   svg {
     display: inline-block;
       // hide SVG icons until JS has loaded
@@ -126,6 +161,10 @@ body {
     background-size: 1px 1px;
     text-decoration: none;
     background-position: 0 99.9%;
+    &:hover {
+      color: $identity;
+      background-image: linear-gradient(to bottom,$identity 75%,$identity 75%);
+    }
     .front & {
       color: #fff;
       background-image: linear-gradient(to bottom,#fff 75%,#fff 75%);
@@ -198,7 +237,7 @@ body {
 }
 
 .headline-list-item {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.7542;
 }
 
@@ -213,8 +252,8 @@ body {
 // nav
 
 .nav {
-  font-size: 1.125rem;
-  line-height: 1.4542;
+  font-size: 1rem;
+  line-height: 1.625;
   position: relative;
   p {
     margin: 0; padding: 0;
