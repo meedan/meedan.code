@@ -2,10 +2,10 @@
 layout: default
 ---
 <article class="content-body" itemscope itemtype="http://schema.org/BlogPosting">
-
+  {% assign author = site.data.people[page.author] %}
   <header>
     <h1>{{ page.title }}</h1>
-    <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time></div>
+    <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time> by {{ author.name }}</div>
   </header>
 
   {{ content }}
@@ -13,8 +13,8 @@ layout: default
   <hr/>
 
   <div class="bio">
-    <div class="avatar thumb-5" style="background-image:url('https://meedan.com/images/team/caio@1x.jpg');"></div>
-    <p>Marc is a software and hardware engineer building better data tools. Follow <a href="#">@kamicut</a> on Twitter.</p>
+    <div class="avatar thumb-5" style="background-image:url('{{ author.avatar }}');"></div>
+    <p>Follow {{ author.nick }} on <a href="https://github.com/{{ author.github }}">GitHub</a>.</p>
   </div>
 
 </article>
