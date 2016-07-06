@@ -21,3 +21,14 @@ markdown: kramdown
 # Markdown-specific settings
 kramdown:
   auto_ids: true # Auto-generate ID's for headings
+
+# extra gems
+# https://github.com/jekyll/jekyll-seo-tag
+gems:
+  - jekyll-seo-tag
+
+# config elements specific to jeckyll-seo-tag
+# https://github.com/jekyll/jekyll-seo-tag
+twitter:
+  username: meedan
+logo: 
