@@ -352,3 +352,12 @@ body {
   text-decoration: none !important; /* do not underline */
   opacity: 1;
 }
+
+/**
+ * Jobs
+ */
+iframe.job {
+  display: block;
+  width: 100%;
+  height: 400px;
+}

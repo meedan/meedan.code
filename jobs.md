@@ -1,0 +1,11 @@
+---
+layout: default
+title: Jobs @ Meedan
+class: post
+---
+<div class="content-body">
+  {% for job in site.data.jobs %}
+      <h2>{{ job.title }}</h2>
+      <iframe class="job" src="{{ job.link }}"></iframe>
+  {% endfor %}
+</div>
