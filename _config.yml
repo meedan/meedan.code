@@ -27,8 +27,12 @@ kramdown:
 gems:
   - jekyll-seo-tag
 
+# exclude the ./vendor directory
+exclude:
+  - vendor
+
 # config elements specific to jeckyll-seo-tag
 # https://github.com/jekyll/jekyll-seo-tag
 twitter:
   username: meedan
-logo: 
+logo: https://meedan.com/images/logos/meedan-logo-horizontal-3@2x.png

@@ -2,7 +2,8 @@
 # code.meedan.com
 # a technology blog built using the jeckyll cms
 
-FROM jekyll/jekyll:pages
+# FROM jekyll/jekyll:pages
+FROM dreg.meedan.net/meedan/ruby
 # https://github.com/jekyll/docker/wiki
 
 MAINTAINER sysops@meedan.com
@@ -10,14 +11,21 @@ ENV IMAGE meedan/code-blog
 ENV DEPLOYUSER codeblog 
 ENV DEPLOYDIR /app 
 
-RUN adduser $DEPLOYUSER -D -s /bin/nologin
+RUN adduser $DEPLOYUSER --shell /bin/nologin
+
 RUN gem install jekyll
 
 COPY ./ $DEPLOYDIR
 RUN chown -R $DEPLOYUSER:$DEPLOYUSER $DEPLOYDIR
 
-WORKDIR $DEPLOYDIR
+# link to where the binary will be put
+# RUN ln -s /app/vendor/bundle/ruby/2.3.0/bin/jekyll /usr/local/bin/jekyll
+
 USER $DEPLOYUSER
+WORKDIR $DEPLOYDIR
+RUN echo "gem: --no-rdoc --no-ri" > ~/.gemrc \
+    && bundle install --deployment
+
 RUN jekyll build
 
 EXPOSE 4000
