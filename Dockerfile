@@ -29,4 +29,4 @@ RUN echo "gem: --no-rdoc --no-ri" > ~/.gemrc \
 RUN jekyll build
 
 EXPOSE 4000
-ENTRYPOINT ["jekyll","serve"]
+ENTRYPOINT ["jekyll","serve","--host=0.0.0.0"]
