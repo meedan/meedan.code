@@ -6,6 +6,11 @@ layout: default
   <header>
     <h1>{{ page.title }}</h1>
     <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time> by {{ author.name }}</div>
+    <div>
+      <span class='st_facebook' displayText='Facebook'></span>
+      <span class='st_twitter' displayText='Tweet'></span>
+      <span class='st_linkedin' displayText='LinkedIn'></span>
+    </div>
   </header>
 
   {{ content }}
