@@ -10,7 +10,7 @@ Our software stack has evolved from humble beginnings to a modern architecture o
 
 It was a natural genesis. In the beginning, Meedan’s only software consisted of an innovative news curation system that published article headers and user comments in English/Arabic translation. The web app had been hand-crafted in PHP by a small team of capable coders, and was hosted on a single, physical server located in Portland, which was managed by a part-time sysadmin. It worked great.
 
-{% include image.html url="/images/evolution-image_0.jpg" description="Meedan's first news app." %}
+{% include image.html url="/images/evolution-image_0.jpg" description="Meedan's first news app, circa 2010." %}
 
 Today, 6 years later, we are running a clusterable, containerized, code-generated, continuously-integrated deployment of 2 separate user-facing products, each with a backend made of multiple microservices, and supporting multiple front-end platforms. Whoa buzzword overdose! Beyond the hype, though, we gradually evolved to such an architecture out of necessity, with many stops and trials along the way from monolithic to distributed.
 
@@ -22,9 +22,9 @@ As a CMS, Drupal was among the most successful. It quickly attracted a strong us
 
 The transition succeeded, and within a few years our growing dev team had built 4 moderately complex applications using Drupal, enjoying daily usage and renewed funding. Along the way, we stretched what Drupal could do, made [numerous contributions to its community](https://www.drupal.org/node/2343639){:target="_blank"}, and traveled to many exciting places worldwide. These were the simpler times.
 
-{% include image.html url="/images/evolution-image_1.png" description="Yallah, a multilingual forum for students and teachers." %}
+{% include image.html url="/images/evolution-image_1.png" description="Yallah, a multilingual forum for students and teachers, ca. 2012." %}
 
-{% include image.html url="/images/evolution-image_2.png" description="Checkdesk 1.0, a liveblogging system." %}
+{% include image.html url="/images/evolution-image_2.png" description="Checkdesk 1.0, a liveblogging system, ca. 2013." %}
 
 ## Complexity rears its ugly head; the new architecture
 
@@ -34,7 +34,7 @@ It was around that time that Meedan was given the opportunity to work on an ambi
 
 Fortunately, the Web was abuzz with API services and early stream processing systems, so we designed a simple architecture that would break the CMS into 2 main parts: an API to communicate with the mobile frontend, and a collection of background processes to populate and process the data model. We implemented the API using Ruby on Rails, trying to adhere to good REST design practices. As a background processing engine, we selected Apache Storm, for its ability to process streaming input, its neat abstraction of pipelines of computation steps, its clusterabilty, and many other attractive features.
 
-{% include image.html url="/images/evolution-image_3.png" description="Bridge software architecture." %}
+{% include image.html url="/images/evolution-image_3.png" description="Bridge software architecture, ca. 2014." %}
 
 ## Explosion of the monolith
 
@@ -54,7 +54,7 @@ Since then, we’ve redesigned our apps’ architectures in terms of reusable, s
 
 * A Hubot that interfaces between various discussion systems (Slack, Twitter, etc.) and our core APIs
 
-{% include image.html url="/images/evolution-image_4.png" description="Checkdesk software architecture." %}
+{% include image.html url="/images/evolution-image_4.png" description="Checkdesk software architecture, today." %}
 
 We’re enthusiastic about this approach for many reasons. As a very small dev team, we want to minimize dependencies, and allow each member to take charge of complete functionalities. By having the team negotiate API endpoints rather than struggle to untangle large codebases, we are able to move faster and delay the advent of complexity. Also, microservices allow team members to implement their functionalities in their language of choice, so long as they produce an API that complies with our standards. Finally, each service can be independently unit-tested and continuously-deployed with minimal down time.
 
