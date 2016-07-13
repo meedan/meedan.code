@@ -12,19 +12,19 @@ ENV DEPLOYDIR /app
 
 RUN adduser $DEPLOYUSER --shell /bin/nologin
 
-RUN gem install jekyll
+COPY ./Gemfile $DEPLOYDIR/Gemfile
+COPY ./Gemfile.lock $DEPLOYDIR/Gemfile.lock
+RUN chown -R $DEPLOYUSER:$DEPLOYUSER $DEPLOYDIR
+
+WORKDIR $DEPLOYDIR
+# its not great form to install as root but unfortunately jekyll does not jive with the `bundle install --deployment` method
+RUN echo "gem: --no-rdoc --no-ri" > ~/.gemrc \
+    && bundle install --without test development
 
 COPY ./ $DEPLOYDIR
 RUN chown -R $DEPLOYUSER:$DEPLOYUSER $DEPLOYDIR
 
-# link to where the binary will be put
-# RUN ln -s /app/vendor/bundle/ruby/2.3.0/bin/jekyll /usr/local/bin/jekyll
-
 USER $DEPLOYUSER
-WORKDIR $DEPLOYDIR
-RUN echo "gem: --no-rdoc --no-ri" > ~/.gemrc \
-    && bundle install --deployment
-
 RUN jekyll build
 
 EXPOSE 4000
