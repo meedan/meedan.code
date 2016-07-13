@@ -2,9 +2,8 @@
 # code.meedan.com
 # a technology blog built using the jeckyll cms
 
-# FROM jekyll/jekyll:pages
-FROM dreg.meedan.net/meedan/ruby
-# https://github.com/jekyll/docker/wiki
+FROM meedan/ruby
+# https://github.com/meedan/docker-hub/tree/master/meedan/ruby
 
 MAINTAINER sysops@meedan.com
 ENV IMAGE meedan/code-blog
