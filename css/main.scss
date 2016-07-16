@@ -154,7 +154,7 @@ body {
 
   padding: 0 3rem;
 
-  a {
+  a:not(.anchorjs-link) {
     color: $black;
     background-image: linear-gradient(to bottom,$black 75%,$black 75%);
     background-repeat: repeat-x;
@@ -336,7 +336,6 @@ body {
  */
 .anchorjs-link {
   color: inherit !important;
-  text-decoration: none !important; /* do not underline */
 }
 
 @media (max-width: 768px) {
@@ -354,7 +353,6 @@ body {
 
 *:hover > .anchorjs-link:hover,
 .anchorjs-link:focus {
-  text-decoration: none !important; /* do not underline */
   opacity: 1;
 }
 
