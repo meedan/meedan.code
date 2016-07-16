@@ -295,6 +295,11 @@ body {
     border-top: 1px solid rgba($neutral-light, 0.4);
   }
 
+  .cc,
+  .cc img {
+    display: inline-block;
+  }
+
   .colophon,
   .footer-list li:first-child {
     font-weight: bold;
