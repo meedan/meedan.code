@@ -16,4 +16,16 @@ Our app of interest is currently made up of the following pieces:
 
 Thanks to years of evangelizing and leadership by my colleague Caio Almeida, all backend services that we write are now routinely unit-tested, code-linted, and auto-documented. On the frontend, we use Ruby's `rspec` to drive behavioural tests through Selenium/ChromeDriver. Unit tests for the frontend are underway :-)
 
-This is not a trivial architecture, and yet we want the whole dev team to be able to run this application on their local machine. Bear in mind that the dev team includes members with widely varying software backgrounds and skills: hardcore software engineers, frontend coders, UI designers, even computational linguists in our case! It would be significantly inefficient to expect all these people to master the intricacies of locally deploying each service, and to resolve integration problems that are specific to their own machine! Indeed, the previous distributed app that we wrote (which was our first) has only ever been developed by a single team member, and now that another dev has joined to help maintain it, we are facing a challenging handover issue that I have good hope will be made easier by our solution below.
+This is not a trivial architecture, and yet we want the whole dev team to be able to run (and of course hack on) this application on their local machine. Bear in mind that the dev team includes members with widely varying software backgrounds and skills: hardcore software engineers, frontend coders, UI designers, even computational linguists in our case! It would be significantly inefficient to expect all these people to master the intricacies of locally deploying each service, and to resolve integration problems that are specific to their own machine. Indeed, the previous distributed app that we wrote (which was our first) has only ever been developed by a single team member, and now that another dev has joined to help maintain it, we are facing a challenging handover issue that I have good hope will be made easier by our solution below.
+
+In a nutshell, we are using `docker-compose` to assemble the app in a host-agnostic manner, allowing to run the app, to modify parts of it without having to restart the whole infrastructure, and to run all tests reliably. Of course, the devil is in the details, and here are the details of our setup.
+
+## Overview of the Docker Compose configuration
+
+## Dockerized Ruby on Rails service for local development
+
+## Dockerized React application for local development
+
+## Dockerized behavioural testing using Selenium
+
+## Documentation and support
