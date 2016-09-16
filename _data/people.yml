@@ -1,14 +1,8 @@
-karim:
-  name: Karim Ratib
-  github: infojunkie
-  avatar: https://meedan.com/images/team/karim@1x.jpg
-  nick: Karim
-
-caiosba:
-  name: Caio Almeida
-  github: caiosba
-  avatar: https://meedan.com/images/team/caio@1x.jpg
-  nick: Caio
+ark:
+  name: Abdul Rehman Khawar
+  github: designbysoil
+  avatar: https://meedan.com/images/team/abdul@1x.jpg
+  nick: ark
 
 bfoote:
   name: Benjamin Foote
@@ -16,25 +10,38 @@ bfoote:
   avatar: https://meedan.com/images/team/ben@1x.jpg
   nick: Ben
 
+caiosba:
+  name: Caio Almeida
+  github: caiosba
+  avatar: https://meedan.com/images/team/caio@1x.jpg
+  nick: Caio
+
+clarissa:
+  name: Clarissa Castellã Xavier
+  github: clarissacastella
+  avatar: https://meedan.com/images/team/clarissa@1x.jpg
+  nick: Clarissa
+
+daniela:
+  name: Daniela Feitosa
+  github: danielafeitosa
+  avatar: https://avatars2.githubusercontent.com/u/4103438?v=3&s=200
+  nick: Dani
+
+karim:
+  name: Karim Ratib
+  github: infojunkie
+  avatar: https://meedan.com/images/team/karim@1x.jpg
+  nick: Karim
+
 melsawy:
   name: Mohamed El-Sawy
   github: melsawy
   avatar: https://meedan.com/images/team/sawy@1x.jpg
   nick: Sawy
 
-ahmed:
-  name: Ahmed Nasser
-  github: ahmednasserswe
-  nick: Ahmed
-
 shadysamir:
   name: Shady Samir
   github: shadysamir
   avatar: https://meedan.com/images/team/shady@1x.jpg
   nick: Shady
-
-ark:
-  name: Abdul Rehman Khawar
-  github: designbysoil
-  avatar: https://meedan.com/images/team/abdul@1x.jpg
-  nick: ARK
