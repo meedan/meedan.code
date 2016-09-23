@@ -4,18 +4,21 @@ layout: post
 author: clarissa
 ---
 
-This is the first of a series of posts about NLP (Natural Language Processing) work at Meedan. Meedan's NLP research and development focuses on solutions for adding value to our company's key products Check and Bridge: a real time news verifier and a collaborative social media translator, respectively.
+This is the first of a series of posts about NLP (Natural Language Processing) work at Meedan. Meedan's NLP research and development focuses on solutions for adding value to our company's key products [Check](https://meedan.com/en/check) and [Bridge](https://meedan.com/en/bridge): collaborative systems for news verification and social media translation, respectively.
 
-The NLP tools developed at Meedan are gathered in an API called [Alegre](https://github.com/meedan/alegre). Currently Alegre has the following features: Language Identifier, Translation Memory, Glossary and Dictionary. A Word Suggestion feature will be released at the end of 2016.
-We are particularly interested in develop solutions that are able to run in a large range of languages, including long-tail ones, that scale well and run efficiently. In order to achieve these goals, the Translation Memory, Glossary and Dictionary features are implemented using Elasticsearch, an open source, distributed search engine. This tool provide us the performance and scalability we need. Also, it works with a large amount of languages, having the “default” analyzer that can be used to deal with information in long tail languages.
+The NLP tools we developed at Meedan are gathered in an API called [Alegre](https://github.com/meedan/alegre). Alegre currently offers the following features: Language Identifier, Translation Memory, Glossary and Dictionary. We are particularly interested to develop solutions that run on a large range of languages (including long-tail ones), that scale well and that run efficiently. In order to achieve these goals, the Translation Memory, Glossary and Dictionary features are implemented using [Elasticsearch](https://www.elastic.co/products/elasticsearch): an open source, distributed search engine. This tool provide us the performance and scalability we need, and it works with a  large number of languages, thanks to its language analysis plugins.
 
-Alegre works with an unique [Elasticsearch](https://www.elastic.co/products/elasticsearch) schema and one type per feature (Dictionary, Glossary and Translation Memory). All types share the same concept: each term is stored in a field named with the ISO 639 language, that uses the language ES analyzer or the default analyzer if this language does not have its own analyzer, like small-communities dialects, and a context field where we can add any valuable information like project, user, source or geolocation.
+Alegre works with an Elasticsearch schema that helps us achieve our goals:
 
-The important thing is that the context information can be changed according the necessity of each project and Elasticsearch give us the power of searching with high performance on it, even if it does not have fixed information. Below we present an excerpt of the Glossary schema as example:
+- Each item (glossary term, translation entry, etc.) is stored in a field that's named according to the ISO 639 language code
+- Each item is associated with a language analyzer corresponding to the item's language code (or the default analyzer if this language does not have its own, e.g. for small-community dialects)
+- Each entry also includes a context field where we can add any valuable non-linguistic information such as project, user, source or geolocation.
+
+The important point is that the contextual information can be changed according the necessity of each project and Elasticsearch give us the power to search with high performance within te context, even if it does not have fixed information. Below we present an excerpt of the Alegre schema as example:
 
 ~~~~
 {
-  "glossary_mlg": {
+  "alegre": {
     "mappings": {
       "glossary": {
         "properties": {
@@ -34,7 +37,6 @@ The important thing is that the context information can be changed according the
                 "user": {"type": "string"}
             }
           }
-
         }
       }
     }
@@ -47,7 +49,7 @@ Next, we can see a Translation Memory document example, following the same type 
 ~~~~
 {
          {
-            "_index": "glossary_mlg",
+            "_index": "alegre",
             "_type": "translationMemory",
             "_id": "AVc0HS8lNHOnL_ufSvRr",
             "_source": {
@@ -66,7 +68,7 @@ Next, we can see a Translation Memory document example, following the same type 
 And here a query searching for *one car* **(1)** pair in *Portuguese* **(2)** from the *translation provider* (context information) **(3)**.
 
 ~~~~
-POST glossary_mlg/translationMemory/_search?pretty=true
+POST alegre/translationMemory/_search?pretty=true
 {
       "query": {
           "bool": {
@@ -88,4 +90,4 @@ POST glossary_mlg/translationMemory/_search?pretty=true
 }
 ~~~~
 
-In the next post we are going to present Alegre's Language Identification feature.  
+In the next post we will present Alegre's Language Identification feature. Stay tuned!
