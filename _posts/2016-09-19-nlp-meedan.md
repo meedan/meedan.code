@@ -16,7 +16,8 @@ Alegre works with an Elasticsearch schema that helps us achieve our goals:
 
 The important point is that the contextual information can be changed according the needs of each project and Elasticsearch gives us the power to search with high performance within the context, even if it does not have a fixed structure. Below we present an excerpt of the Alegre schema as example:
 
-~~~~
+{% highlight ruby linenos %}
+
 {
   "alegre": {
     "mappings": {
@@ -42,11 +43,11 @@ The important point is that the contextual information can be changed according 
     }
   }
 }
-~~~~
+{% endhighlight %}
 
 Next, we can see a Translation Memory document example, following the same type design.
 
-~~~~
+{% highlight ruby linenos %}
 {
          {
             "_index": "alegre",
@@ -63,11 +64,11 @@ Next, we can see a Translation Memory document example, following the same type 
             }
          }
 }
-~~~~
+{% endhighlight %}
 
 And here a query searching for *one car* **(1)** pair in *Portuguese* **(2)** from the *translation provider* (context information) **(3)**.
 
-~~~~
+{% highlight ruby linenos %}
 POST alegre/translationMemory/_search?pretty=true
 {
       "query": {
@@ -88,6 +89,6 @@ POST alegre/translationMemory/_search?pretty=true
           }              
       }
 }
-~~~~
+{% endhighlight %}
 
 In the next post we will present Alegre's Language Identification feature. Stay tuned!

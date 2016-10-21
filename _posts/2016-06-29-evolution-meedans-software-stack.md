@@ -4,13 +4,13 @@ layout: post
 author: karim
 ---
 
+{% include image.html url="/images/evolution-image_0.jpg" description="Meedan's first news app, circa 2010." %}
+
 Welcome to Meedan Code! In this inaugural post, we’re offering a retrospective about the software technologies that we’ve been using at Meedan over the years. We’ll have plenty of time to dig deeper into our current technology in upcoming posts; this one is just a quick fly-by.
 
 Our software stack has evolved from humble beginnings to a modern architecture of interacting components that holds the promise of better stability, maintainability, and performance - and great fun to work on.
 
 It was a natural genesis. In the beginning, Meedan’s only software consisted of an innovative news curation system that published article headers and user comments in English/Arabic translation. The web app had been hand-crafted in PHP by a small team of capable coders, and was hosted on a single, physical server located in Portland, which was managed by a part-time sysadmin. It worked great.
-
-{% include image.html url="/images/evolution-image_0.jpg" description="Meedan's first news app, circa 2010." %}
 
 Today, 6 years later, we are running a clusterable, containerized, code-generated, continuously-integrated deployment of 2 separate user-facing products, each with a backend made of multiple microservices, and supporting multiple front-end platforms. Whoa buzzword overdose! Beyond the hype, though, we gradually evolved to such an architecture out of necessity, with many stops and trials along the way from monolithic to distributed.
 
@@ -66,6 +66,6 @@ We're currently in the process of rewriting [our social verification app](https:
 
 To encapsulate our front end experience, we [maintain a Yeoman generator](https://github.com/meedan/generator-keefer){:target="_blank"} for the code structure, dependencies, and basic functionality. To date, we've used this framework to release a [Chrome browser extension for our social translation app](https://chrome.google.com/webstore/detail/bridge/jfjhkoibpnplohpgfogadhhbaeinnaob){:target="_blank"}.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U8CBGiRKCko" frameborder="0" allowfullscreen></iframe>
+{% include media.html url="https://www.youtube.com/embed/U8CBGiRKCko" description="Bridge browser extension walkthrough." %}
 
 We are only starting our journey with this new architectural approach, and I am certain we will encounter many new challenges. It’s an exciting time to be coding at Meedan, and I hope I was able to convey some of that excitement!

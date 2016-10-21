@@ -11,6 +11,7 @@
 @import "helpers.scss";
 @import "lists.scss";
 @import "post.scss";
+@import "syntax.scss";
 @import "card.scss";
 
 html {
@@ -22,49 +23,24 @@ html {
 a {
   color: $neutral-medium;
   text-decoration: none;
-  transition: color 0.2s ease;
   &:hover {
     color: $neutral-dark;
   }
 }
 
 body {
-  font: 16px/26px -apple-system, 'Open Sans', Helvetica, Helvetica Neue, Arial;
-  letter-spacing: -0.008em;
+  font: 16px/26px 'Open Sans', -apple-system, Helvetica, Helvetica Neue, Arial;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  word-wrap: break-word; /* force long words to break */
+  overflow-wrap: break-word; /* newer syntax standard that replaces word-wrap */
 }
 
 .site-wrapper {
   position: relative;
   display: flex;
   flex-flow: column wrap;
-
-  .front &:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background: url('../images/bg-lovestream.svg') transparent;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1000;
-    pointer-events: none;
-  }
-  .front &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background: url('../images/bg-lovestream-burn.svg') transparent;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -999;
-    pointer-events: none;
-  }
+  overflow: hidden;
 }
 
 .logo,
@@ -81,8 +57,14 @@ body {
 // ======================================================================
 // Logo
 
+@include responsive('min-width: #{$width-tablet}') {
+  .logo {
+    padding: 2rem 3rem 0 3rem;
+  }
+}
+
 .logo {
-  padding: 2rem 3rem 0 3rem;
+  padding: 2rem 1.5rem 0;
   font-family: 'Roboto Mono';
   font-size: 1.425rem;
   letter-spacing: 0.02em;
@@ -103,7 +85,7 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    // right: 0;
     pointer-events: none;
   }
 
@@ -152,24 +134,7 @@ body {
     margin-bottom: 5rem;
   }
 
-  padding: 0 3rem;
-
-  a:not(.anchorjs-link) {
-    color: $black;
-    background-image: linear-gradient(to bottom,$black 75%,$black 75%);
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    text-decoration: none;
-    background-position: 0 99.9%;
-    &:hover {
-      color: $identity;
-      background-image: linear-gradient(to bottom,$identity 75%,$identity 75%);
-    }
-    .front & {
-      color: #fff;
-      background-image: linear-gradient(to bottom,#fff 75%,#fff 75%);
-    }
-  }
+  padding: 0 1.5em;
 
 }
 
@@ -181,7 +146,7 @@ body {
   .front .content {
     display: flex;
     flex-flow: row nowrap;
-    margin-top: 30rem;
+    // margin-top: 30rem;
   }
   .post .content {
     display: flex;
@@ -252,8 +217,8 @@ body {
 // nav
 
 .nav {
-  font-size: 1rem;
-  line-height: 1.625;
+  font-size: 1.125rem;
+  line-height: 1.4542;
   position: relative;
   p {
     margin: 0; padding: 0;
@@ -282,6 +247,10 @@ body {
     flex: 1 0 28%;
     margin-right: 2rem;
   }
+}
+
+.nav a {
+  @include underlined-anchor-links($black, $identity);
 }
 
 
@@ -314,6 +283,13 @@ body {
     flex-flow: row nowrap;
   }
 
+  .footer a:hover {
+    color: $neutral-dark;
+    background: -webkit-linear-gradient(135deg, $m-green, $m-orange, $m-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .colophon {
     margin-right: 2rem;
     flex: 1 0 28%;
@@ -331,11 +307,15 @@ body {
   }
 }
 
+// ======================================================================
+// Misc
+
+
 /**
  * Link placement and hover behavior.
  */
 .anchorjs-link {
-  color: inherit !important;
+  color: inherit;
 }
 
 @media (max-width: 768px) {

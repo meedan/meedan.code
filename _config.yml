@@ -17,7 +17,7 @@ github_username:  meedan
 
 # Build settings
 markdown: kramdown
-
+highlighter: rouge
 # Markdown-specific settings
 kramdown:
   auto_ids: true # Auto-generate ID's for headings
@@ -26,6 +26,7 @@ kramdown:
 # https://github.com/jekyll/jekyll-seo-tag
 gems:
   - jekyll-seo-tag
+  - rouge
 
 # exclude the ./vendor directory
 exclude:

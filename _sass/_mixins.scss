@@ -20,3 +20,17 @@
     @media only screen and ($query) { @content; }
   }
 }
+
+@mixin underlined-anchor-links($color, $hover) {
+  color: $color;
+  background-image: linear-gradient(to bottom,$color 75%,$color 75%);
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  text-decoration: none;
+  background-position: 0 99.9%;
+  &:hover {
+    color: $hover;
+    background-image: linear-gradient(to bottom,$hover 75%,$hover 75%);
+    background-size: 2px 2px;
+  }
+}

@@ -6,17 +6,16 @@ layout: default
   <header>
     <h1>{{ page.title }}</h1>
     <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time> by {{ author.name }}</div>
-    <div>
-      <span class='st_facebook' displayText='Facebook'></span>
-      <span class='st_twitter' displayText='Tweet'></span>
-      <span class='st_linkedin' displayText='LinkedIn'></span>
-    </div>
   </header>
 
   {{ content }}
 
-  <hr/>
+  <div class="share">
+    {% include share.html %}
+  </div>
 
+  <hr/>
+  
   <div class="bio">
     <div class="avatar thumb-5" style="background-image:url('{{ author.avatar }}');"></div>
     <p>Follow {{ author.nick }} on <a href="https://github.com/{{ author.github }}">GitHub</a>.</p>

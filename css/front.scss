@@ -1,0 +1,89 @@
+---
+# SASS file for frontpage
+---
+
+// import sass files
+@import "colors.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+@media (min-width: 1px) and (max-width: #{$width-tablet}) {
+  .front .site-wrapper {
+    // height: calc(100vw * 0.56944);
+  }
+}
+
+@include responsive('min-width: #{$width-tablet}') {
+  .front .site-wrapper {
+    height: calc(100vw * 0.56944);
+  }
+}
+
+.front .site-wrapper:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: url('../images/bg-lovestream.svg') transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1000;
+  pointer-events: none;
+}
+.front .site-wrapper:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: url('../images/bg-lovestream-burn.svg') transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -999;
+  pointer-events: none;
+}
+
+.front canvas {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  z-index: -1;
+}
+
+@media (min-width: 1px) and (max-width: #{$width-tablet}) {
+  .front canvas {
+    width: 150%;
+  }
+}
+
+/* animate background */
+.animation.scaleout {
+  opacity: 0;
+  -moz-transform: scale(1.12);
+  -o-transform: scale(1.12);
+  -ms-transform: scale(1.12);
+  -webkit-transform: scale(1.12);
+  transform: scale(1.12);
+}
+
+/* Using JS add active class to hero element to trigger scaleout effect */
+.animation.scaleout.active {
+  opacity: 1;
+  will-change: transform, opacity;
+  -moz-transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), -webkit-transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.front .content a {
+  @include underlined-anchor-links(rgba(#fff,0.9), #fff);
+}

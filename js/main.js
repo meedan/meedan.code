@@ -1,4 +1,12 @@
 (function() {
+
+	/**
+   * AnchorJS v1.1.1 options and selector
+   */
+  'use strict';
+  anchors.options.placement = 'left';
+	anchors.add('.content h2, .content h3, .content h4, .content h5, .content h6');
+
   $(document).ready(function() {
 
 		$('a.image-link').magnificPopup({
