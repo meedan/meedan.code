@@ -87,3 +87,55 @@
 .front .content a {
   @include underlined-anchor-links(rgba(#fff,0.9), #fff);
 }
+
+
+// ======================================================================
+// Log
+
+.headline-list li {
+  list-style: none;
+}
+
+.headline-list .datetime-month,
+.headline-list .datetime-day {
+  display: inline-block;
+  color: rgba(255,255,255,0.8);
+}
+
+.headline-list .datetime-month {
+  width: 3em;
+  text-align: right;
+}
+
+.headline-list .datetime-day {
+  width: 2em;
+  text-align: left;
+  padding-left: 0.325em;
+}
+
+.headline-list time {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.0245rem;
+}
+
+.headline-list-item {
+  display: flex;
+
+  font-size: 1rem;
+  line-height: 1.7542;
+}
+
+.headline-list-item .headline-list-item-date {
+  flex: 1 1 auto;
+}
+
+.headline-list-item .headline-list-item-title {
+  flex: 4 1 78%;
+}
+
+@include responsive('min-width: #{$width-tablet}') {
+  .front .log {
+    flex: 4 1 68%;
+  }
+}
