@@ -7,6 +7,10 @@
 @import "variables.scss";
 @import "mixins.scss";
 
+.front .site-wrapper {
+  will-change: transform, opacity;
+}
+
 @media (min-width: 1px) and (max-width: #{$width-tablet}) {
   .front .site-wrapper {
     // height: calc(100vw * 0.56944);
