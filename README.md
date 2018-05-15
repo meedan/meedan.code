@@ -4,10 +4,11 @@ Meedan's software blog, using `jekyll`.
 ## How to write a post
 
 - Clone this repo on the `develop` branch
+- Install dependencies with `bundle install --path vendor/bundle`
 - Start Jekyll locally with `jekyll serve`
 - Open a new file in `/_posts`, named as `YYYY-MM-DD-slug.md` where the date prefix will be used as publishing date
 - Posts are typically written in Markdown format - [read this for a good intro](https://jekyllrb.com/docs/posts/)
-- Add a YAML header like the following:
+- Add a YAML header to the post like the following:
 ```
 ---
 title: A Dockerized development environment ftw
