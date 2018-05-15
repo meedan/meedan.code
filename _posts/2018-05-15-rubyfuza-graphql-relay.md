@@ -10,3 +10,5 @@ a closer mapping to our internal data model, compared to a REST API. Here's a ta
 2018](http://www.rubyfuza.org/) in beautiful Cape Town, South Africa.
 
 {% oembed https://www.youtube.com/watch?v=DWOIeHUnJ44 %}
+
+{% oembed https://imgur.com/a/fzLNDLU %}
