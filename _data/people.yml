@@ -4,12 +4,6 @@ ark:
   avatar: https://meedan.com/images/team/abdul@1x.jpg
   nick: ark
 
-bfoote:
-  name: Benjamin Foote
-  github: bnfinet
-  avatar: https://meedan.com/images/team/ben@1x.jpg
-  nick: Ben
-
 caiosba:
   name: Caio Almeida
   github: caiosba
@@ -40,8 +34,7 @@ melsawy:
   avatar: https://meedan.com/images/team/sawy@1x.jpg
   nick: Sawy
 
-shadysamir:
-  name: Shady Samir
-  github: shadysamir
-  avatar: https://meedan.com/images/team/shady@1x.jpg
-  nick: Shady
+alex:
+  name: Alexandre Amorim
+  github: amoedoamorim
+  avatar: https://avatars0.githubusercontent.com/u/766082?s=88&v=4
