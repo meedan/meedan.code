@@ -19,4 +19,4 @@ author: karim
 - Ensure that you, the author, exist in `/_data/people.yml`
 - Place your post's image files in `/images` - right now all post images are mixed together
 - Push to `develop`: your post will appear at http://code.dev.meedan.com/
-- Ask an admin to publish to https://code.meedan.com/
+- Push to `master` or ask an admin to publish to https://code.meedan.com/
