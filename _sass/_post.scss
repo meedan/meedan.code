@@ -52,6 +52,11 @@ figcaption {
 	margin-top: -1.7em; 
 }
 
+code {
+  max-width: 100%;
+  display: block;
+  white-space: pre-wrap
+}
 
 blockquote {
 	position: relative;
