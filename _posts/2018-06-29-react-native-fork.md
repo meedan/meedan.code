@@ -12,12 +12,14 @@ It's very straightforward to use React Native to develop a mobile application. B
 You need to install Android SDK and Android NDK and make sure that your environment will use them to compile React Native code.
 
 `~/.bashrc` (or equivalent):
+
 ```
 export ANDROID_SDK=/path/to/android-sdk
 export ANDROID_NDK=/oath/to/android-ndk/android-ndk-r10e
 ```
 
 `android/local.properties`:
+
 ```
 sdk.dir=/path/to/android-sdk
 ndk.dir=/path/to/android-ndk/android-ndk-r10e
@@ -74,6 +76,7 @@ dependencies {
 The previous steps can be found in the [official documentation](https://facebook.github.io/react-native/docs/building-from-source.html). But if you use 3rd-party modules, that's where things get more complicated and that's where we got stuck until we found a solution (a.k.a. hack). Those modules usually list React Native as one of the dependencies that should be compiled before it. When we use a fork, the 3rd party modules still point to the official module, which doesn't exist, so, you'll receive many exceptions from those modules related to classes that it can't find. In theory, something like this should work:
 
 `android/app/build.gradle`:
+
 ```
 configurations.all {
   exclude group: 'com.facebook.react', module: 'react-native'
@@ -105,6 +108,7 @@ gitdir: ../.git/modules/submodule-name
 In our `docker-compose.yml` file, we mount the application directory at the root of the filesystem. So, there is no `../.git` directory when NPM tries to install the Git dependency. So, one solution is to mount the `.git` directory of the parent Git repository as well:
 
 `docker-compose.yml`:
+
 ```
 ...
 container:
@@ -122,6 +126,7 @@ worktree = ../../../submodule-name
 This configuration option should point to the root of our application. So, you need to make sure that the Docker volume mount point matches the submodule name. Then that's how our `docker-compose.yml` will look like:
 
 `docker-compose.yml`:
+
 ```
 ...
 container:
