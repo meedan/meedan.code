@@ -4,9 +4,11 @@ layout: post
 author: caiosba
 ---
 
+In which we demonstrate a technique to reliably target DOM elements in spite of React's behind-the-scenes manipulations.
+
 ## The Context
 
-Here at [Meedan](https://meedan.com){:target="_blank", rel="noopener noreferrer"} we try to write automated tests for all our applications, on both backend and frontend sides, as our [Travis](https://travis-ci.org/meedan){:target="_blank", rel="noopener noreferrer"} page shows. On most applications, like [Check API](https://github.com/meedan/check-api) and [Check Bot](https://github.com/meedan/check-bot){:target="_blank", rel="noopener noreferrer"} we even have 100% test coverage. Our test suite should not only be as complete as possible, but also stable - e.g., tests should pass or fail consistently.
+Here at Meedan we try to write automated tests for all our applications, on both backend and frontend, as our [Travis](https://travis-ci.org/meedan){:target="_blank", rel="noopener noreferrer"} page shows. On most applications, like [Check API](https://github.com/meedan/check-api){:target="_blank", rel="noopener noreferrer"} and [Check Bot](https://github.com/meedan/check-bot){:target="_blank", rel="noopener noreferrer"} we even have 100% test coverage. Our test suite should not only be as complete as possible, but also stable - e.g., tests should pass or fail consistently.
 
 
 ## The Problem
@@ -22,7 +24,7 @@ wait = Selenium::WebDriver::Wait.new
 element = wait.until { @driver.find_element(:css, '.target') }
 ```
 
-The problem with this approach is that, in many (random) cases, the `element` is not actually attached to the DOM (yet or anymore), and thus we can get stale reference to the `element` when we use it later. The `find_element` itself doesn't guarantee that the returned element it not stale. But if you call the `displayed?` method, then an [exception](https://docs.seleniumhq.org/exceptions/stale_element_reference.jsp){:target="_blank", rel="noopener noreferrer"} will be thrown if the element is stale. This is particularly common in React.js, where the UI is re-rendered very often.
+The problem with this approach is that, in many (random) cases, the `element` is not actually attached to the DOM (yet or anymore), and thus we can get stale reference to the `element` when we use it later. The `find_element` itself doesn't guarantee that the returned element it not stale. But if you call the `displayed?` method, then an [exception](https://docs.seleniumhq.org/exceptions/stale_element_reference.jsp){:target="_blank", rel="noopener noreferrer"} will be thrown if the element is stale. This is particularly common in React.js, where the UI is re-rendered very often, causing the element to pop in and out of the DOM unexpectedly.
 
 Our solution was to implement our own version of a method that waits until an element is really attached to the page and returns it:
 
