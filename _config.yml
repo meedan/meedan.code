@@ -36,8 +36,7 @@ exclude:
 # https://github.com/jekyll/jekyll-seo-tag
 twitter:
   username: meedan
-logo: https://meedan.com/images/logos/meedan-logo-horizontal-3@2x.png
-
+logo: /images/meedan-color.png
 defaults:
   - values:
-      image: https://meedan.com/images/logos/meedan-logo-horizontal-3@2x.png
+      image: /images/meedan-color.png
