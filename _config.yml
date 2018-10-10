@@ -37,3 +37,7 @@ exclude:
 twitter:
   username: meedan
 logo: https://meedan.com/images/logos/meedan-logo-horizontal-3@2x.png
+
+defaults:
+  - values:
+      image: https://meedan.com/images/logos/meedan-logo-horizontal-3@2x.png
