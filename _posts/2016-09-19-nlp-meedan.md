@@ -1,5 +1,5 @@
 ---
-title: NLP at Meedan
+title: An Elasticsearch schema for a multilingual, context-aware glossary
 layout: post
 author: clarissa
 ---
@@ -85,8 +85,8 @@ POST alegre/translationMemory/_search?pretty=true
                 }],
                 "filter": {
                   "exists" : { "field" : "pt" } (2)
-              }                                    
-          }              
+              }
+          }
       }
 }
 {% endhighlight %}

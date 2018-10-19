@@ -1,5 +1,5 @@
 ---
-title: Language identification using Alegre
+title: Bilingual language identification in short, noisy texts
 layout: post
 author: clarissa
 ---
