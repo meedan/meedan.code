@@ -8,7 +8,7 @@ layout: default
     <div class="meta"><time class="b-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time> by {{ author.name }}</div>
   </header>
 
-  {{ content }}
+  {{ content | extlinks }}
 
   <div class="share">
     {% include share.html %}
