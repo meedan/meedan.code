@@ -5,4 +5,5 @@ group :jekyll_plugins do
    gem "jekyll_oembed"
    gem "jekyll-font-awesome-sass"
    gem "jekyll-seo-tag"
+   gem "jekyll-extlinks"
 end

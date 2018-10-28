@@ -27,6 +27,7 @@ kramdown:
 gems:
   - jekyll-seo-tag
   - rouge
+  - jekyll-extlinks
 
 # exclude the ./vendor directory
 exclude:
@@ -40,3 +41,5 @@ logo: /images/meedan-color.png
 defaults:
   - values:
       image: /images/meedan-color.png
+extlinks:
+  attributes: {rel: 'noopener noreferrer', target: _blank}
