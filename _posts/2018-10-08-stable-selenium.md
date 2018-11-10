@@ -32,11 +32,11 @@ Our solution was to implement our own version of a method that waits until an el
 def wait_for_selector(selector, type = :css, timeout = 20, max_attempts = 10, wait = 1)
   element = nil
   attempts = 0
-  wait = Selenium::WebDriver::Wait.new(timeout: timeout)
+  selenium_wait = Selenium::WebDriver::Wait.new(timeout: timeout)
   while element.nil? && attempts < max_attempts do
     attempts += 1
     begin
-      element = wait.until { @driver.find_element(type, selector) }
+      element = selenium_wait.until { @driver.find_element(type, selector) }
       element.displayed?
     rescue
       element = nil
