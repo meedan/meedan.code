@@ -29,13 +29,14 @@ The problem with this approach is that, in many (random) cases, the `element` is
 Our solution was to implement our own version of a method that waits until an element is really attached to the page and returns it:
 
 ```ruby
-def wait_for_selector(selector, type = :css, max_attempts = 10, wait = 1)
+def wait_for_selector(selector, type = :css, timeout = 20, max_attempts = 10, wait = 1)
   element = nil
   attempts = 0
+  selenium_wait = Selenium::WebDriver::Wait.new(timeout: timeout)
   while element.nil? && attempts < max_attempts do
     attempts += 1
     begin
-      element = @driver.find_element(type, selector)
+      element = selenium_wait.until { @driver.find_element(type, selector) }
       element.displayed?
     rescue
       element = nil
@@ -47,5 +48,7 @@ end
 ```
 
 This method looks for an element using a `selector`, which can be of `type` CSS, XPath, etc. When Selenium returns the element to us, we check if it's stale or not, by calling the `displayed?` method. If it's stale, an exception will be thrown, which we'll catch and `wait` until we try again, up to a `max_attempts` times.
+
+Please pay attention that depending on the values for `timeout`, `max_attempts` and `wait`, the whole method can take a long time for an element that is not found, since each attempt can take up to `timeout` + `wait` seconds. For example, on Travis, a build is considered stale if there is no output in 10 minutes.
 
 After this fix, our last five builds on [Travis](https://travis-ci.org/meedan/check-web/builds) ran successfully. So far, so good. If this stability is confirmed, we'll be able to change the title of this blog post from "How we've been fixing..." to "How we have fixed..." :crossed_fingers:
